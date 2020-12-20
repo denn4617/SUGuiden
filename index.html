@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Scroll animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Fade out on scroll script -->
+    <script>
+        const checkpoint = 300;
+
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll <= checkpoint) {
+                opacity = 1 - currentScroll / checkpoint;
+            } else {
+                opacity = 0;
+            }
+            document.querySelector(".main-header").style.opacity = opacity;
+        });
+    </script>
+
+    <title>Din SU Guide</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <h1><span>SU</span> Guiden</h1>
+        <p>Alt information om SU samlet et sted!</p>
+    </header>
+
+    <main class="container">
+        <section class="card" data-aos="fade-right">
+            <img src="img/beregn.jpg" alt="">
+            <div>
+                <h3>Beregn din SU</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio rem nesciunt magnam. Impedit
+                    tenetur delectus harum eaque quod minus, sapiente explicabo magnam veritatis suscipit mollitia
+                    numquam iure excepturi quam eveniet.</p>
+                <a href="#" class="btn">SU Beregner</a>
+            </div>
+        </section>
+
+        <section class="card" data-aos="fade-left">
+            <img src="img/countdown (Medium).jpg" alt="">
+            <div>
+                <h3>Hvornår får du SU?</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio rem nesciunt magnam. Impedit
+                    tenetur delectus harum eaque quod minus, sapiente explicabo magnam veritatis suscipit mollitia
+                    numquam iure excepturi quam eveniet.</p>
+                <a href="#" class="btn">SU Countdown</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 400,
+            duration: 1000
+        });
+    </script>
+
+</body>
+
+</html>
