@@ -78,13 +78,13 @@ function getLastBusinessDay() {
 		}
 	}
 	var lastBusinessDay = new Date(year, month + 1, date);
-	return lastBusinessDay;	
+	return lastBusinessDay;
 }
 
 
 // Set the date we're counting down to
 var countDownDate = new Date(getLastBusinessDay()).getTime();
-//var countDownDate = new Date('Dec 20 02:18:10 2020').getTime();
+// var countDownDate = new Date('Jan 9 02:18:10 2021').getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function () {
@@ -120,31 +120,46 @@ var x = setInterval(function () {
 	}
 }, 1000);
 
+
+
 function formatDate(date) {
-    var d = new Date(date),
-        month = '' + (d.getMonth() + 1),
-        day = '' + d.getDate(),
-        year = d.getFullYear();
+	var d = new Date(date),
+		month = '' + (d.getMonth() + 1),
+		day = '' + d.getDate(),
+		year = d.getFullYear();
 
-    if (month.length < 2) 
-        month = '0' + month;
-    if (day.length < 2) 
-        day = '0' + day;
+	if (month.length < 2)
+		month = '0' + month;
+	if (day.length < 2)
+		day = '0' + day;
 
-    return [day, month, year].join('/');
+	var dateString = d.toString().split(" ");
+
+	var weekday = dateString[0];
+
+	switch (weekday) {
+		case "Mon":
+			weekday = "Mandag";
+			break;
+		case "Tue":
+			weekday = "Tirsdag";
+			break;
+		case "Wed":
+			weekday = "Onsdag";
+			break;
+		case "Thu":
+			weekday = "Torsdag";
+			break;
+		case "Fri":
+			weekday = "Fredag";
+			break;
+		default:
+			break;
+	}
+
+	return `${weekday} d. ${day}/${month}/${year}`;
 }
 
-// function printDate() {
-// 	var x = document.getElementById("dateShown");
-// 	if (x.style.display === "none") {
-// 		x.style.display = "block";
-// 	} else {
-// 		x.style.display = "none";
-// 	}
-	
-// }
-
-// document.getElementById("dateShown").innerHTML = getLastBusinessDay();
 
 /*__________________________________________________________________________________________________________________________________________________*/
 
